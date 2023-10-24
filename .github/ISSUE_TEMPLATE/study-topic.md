@@ -1,7 +1,7 @@
 ---
 name: Study topic
 about: Knowledge I must study
-title: "[Study]"
+title: "[Study] "
 labels: ''
 assignees: ''
 
