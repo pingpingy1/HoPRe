@@ -1,21 +1,31 @@
 """User interface for HoPRe"""
 
-
-import sys
 import os
+
+from swiplserver import PrologMQI
+
+
+BASE_DIR = os.path.dirname(__file__)
 
 
 def hopre() -> None:
     """The main HoPRe (Homophone-based Pun Recognition) function."""
-    while True:
-        user_input: str = input("Please enter a sentence:\n")
-        if user_input == "Goodbye.":
-            print("It was a good run! Goodbye.")
-            sys.exit()
 
-        print(f"\nHere's the sentence you provided:\n{user_input}")
-        input("Press enter to continue...")
-        os.system("clear")
+    with PrologMQI() as mqi:
+        with mqi.create_thread() as pthread:
+            english_analyzer = os.path.join(
+                BASE_DIR, "englishAnalysis", "englishAnalyzer.pl"
+            )
+            print(english_analyzer)
+            pthread.query(f'consult("{english_analyzer}")')
+
+            while True:
+                os.system("clear")
+                pthread.query_async("analyzeSentence")
+                print(pthread.query_async_result())
+
+                if input("Press enter to continue or q to exit...") == "q":
+                    os._exit(0)
 
 
 if __name__ == "__main__":
