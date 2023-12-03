@@ -33,7 +33,7 @@
 :- use_module(comsemPredicates,[infix/0,
                                 prefix/0,
                                 printRepresentations/1,
-				compose/3]).
+                                compose/3]).
 
 :- use_module(betaConversion,[betaConvert/2]).
 
@@ -54,7 +54,7 @@
 
 lambda:-
 	readLine(Sentence),
-        lambda(Sentence,Sems),
+   lambda(Sentence,Sems),
 	printRepresentations(Sems).
 
 lambda(Sentence,Sems):-
@@ -67,11 +67,11 @@ lambda(Sentence,Sems):-
 
 lambdaTestSuite:-
 	nl, write('>>>>> LAMBDA ON SENTENCE TEST SUITE <<<<< '), nl,
-        sentence(Sentence,_),
-        nl, write('Sentence: '), write(Sentence),
+   sentence(Sentence,_),
+   nl, write('Sentence: '), write(Sentence),
 	lambda(Sentence,Formulas),
 	printRepresentations(Formulas),
-        fail.
+   fail.
 
 lambdaTestSuite.
 

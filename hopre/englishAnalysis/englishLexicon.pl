@@ -75,6 +75,8 @@ lexEntry(noun,[symbol:weapon,syntax:[weapon]]).
 lexEntry(noun,[symbol:wife,syntax:[wife]]).
 lexEntry(noun,[symbol:woman,syntax:[woman]]).
 
+lexEntry(noun,[symbol:tomato,syntax:[tomato]]).
+
 
 /*========================================================================
    Proper Names
@@ -105,6 +107,7 @@ lexEntry(pn,[symbol:yolanda,syntax:[yolanda]]).
 
 lexEntry(qnp,[symbol:person,syntax:[who],mood:int,type:wh]).
 lexEntry(qnp,[symbol:thing,syntax:[what],mood:int,type:wh]).
+lexEntry(qnp,[symbol:reason,syntax:[why],mood:int,type:wh]).
 
 
 /*========================================================================
@@ -146,6 +149,10 @@ lexEntry(iv,[symbol:shriek,syntax:[shriek],inf:fin,num:pl]).
 lexEntry(iv,[symbol:walk,syntax:[walk],inf:inf,num:sg]).
 lexEntry(iv,[symbol:walk,syntax:[walks],inf:fin,num:sg]).
 lexEntry(iv,[symbol:walk,syntax:[walk],inf:fin,num:pl]).
+
+lexEntry(iv,[symbol:turnRed,syntax:[turn,red],inf:inf,num:sg]).
+lexEntry(iv,[symbol:turnRed,syntax:[turns,red],inf:fin,num:sg]).
+lexEntry(iv,[symbol:turnRed,syntax:[turn,red],inf:fin,num:pl]).
 
 
 /*========================================================================
