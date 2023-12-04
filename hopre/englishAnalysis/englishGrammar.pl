@@ -37,6 +37,11 @@ t([sem:T])-->
    q([sem:Q]),
    {combine(t:T,[q:Q])}.
 
+t([sem:T])-->
+   [because],
+   s([coord:no,sem:S]),
+   {combine(t:T,[s:S])}.
+
 
 /*========================================================================
    Sentences
@@ -102,6 +107,11 @@ q([sem:Sem])-->
    sinv([gap:[np:NP],sem:S]),
    {combine(q:Sem,[sinv:S])}.
 
+q([sem:Sem])-->
+   whadvp([num:_,sem:AdvP]),
+   sinv([gap:[],sem:S]),
+   {combine(q:Sem,[whadvp:AdvP,sinv:S])}.
+
 
 /*========================================================================
    Noun Phrases
@@ -150,6 +160,15 @@ whnp([num:sg,sem:NP])-->
 
 
 /*========================================================================
+   WH Adverb Phrases
+========================================================================*/
+
+whadvp([num:sg,sem:AdvP])-->
+   qadvp([mood:int,sem:QAdvP]),
+   {combine(whadvp:AdvP,[qadvp:QAdvP])}.
+
+
+/*========================================================================
    Nouns
 ========================================================================*/
 
@@ -185,6 +204,10 @@ nmod([sem:Sem])-->
    pp([sem:PP]), 
    nmod([sem:NMod]),
    {combine(nmod:Sem,[pp:PP,nmod:NMod])}.
+
+nmod([sem:Sem])-->
+   adj([sem:Adj]),
+   {combine(nmod:Sem,[adj:Adj])}.
 
 
 /*========================================================================
@@ -295,6 +318,11 @@ qnp([mood:M,sem:NP])-->
    {lexEntry(qnp,[symbol:Symbol,syntax:Word,mood:M,type:Type])},
    Word,
    {semLex(qnp,[type:Type,symbol:Symbol,sem:NP])}.
+
+qadvp([mood:M,sem:QAdvP])-->
+   {lexEntry(qadvp,[symbol:Symbol,syntax:Word,mood:M,type:Type])},
+   Word,
+   {semLex(qadvp,[type:Type,symbol:Symbol,sem:QAdvP])}.
 
 noun([sem:Sem])--> 
    {lexEntry(noun,[symbol:Sym,syntax:Word])},

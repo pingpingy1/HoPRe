@@ -30,6 +30,10 @@ semLex(det,M):-
         sem:lam(P,lam(Q,some(X,and(app(P,X),app(Q,X)))))].
 
 semLex(det,M):-
+   M = [type:def,
+        sem:lam(P,lam(Q,some(X,and(app(P,X),app(Q,X)))))].
+
+semLex(det,M):-
    M = [type:wh,
         sem:lam(P,lam(Q,que(X,app(P,X),app(Q,X))))].
 
@@ -57,6 +61,11 @@ semLex(qnp,M):-
         symbol:Sym,
         sem:lam(Q,que(X,Formula,app(Q,X)))], 
    compose(Formula,Sym,[X]).
+
+semLex(qadvp,M):-
+   M = [type:wh,
+        symbol:Sym,
+        sem:lam(Q,que(_,Sym,Q))].
 
 semLex(cop,M):-
    M = [pol:pos,

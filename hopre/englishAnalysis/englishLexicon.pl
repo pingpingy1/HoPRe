@@ -76,6 +76,7 @@ lexEntry(noun,[symbol:wife,syntax:[wife]]).
 lexEntry(noun,[symbol:woman,syntax:[woman]]).
 
 lexEntry(noun,[symbol:tomato,syntax:[tomato]]).
+lexEntry(noun,[symbol:salad,syntax:[salad]]).
 
 
 /*========================================================================
@@ -107,7 +108,13 @@ lexEntry(pn,[symbol:yolanda,syntax:[yolanda]]).
 
 lexEntry(qnp,[symbol:person,syntax:[who],mood:int,type:wh]).
 lexEntry(qnp,[symbol:thing,syntax:[what],mood:int,type:wh]).
-lexEntry(qnp,[symbol:reason,syntax:[why],mood:int,type:wh]).
+
+
+/*========================================================================
+   Quantified Adverb Phrases
+========================================================================*/
+
+lexEntry(qadvp,[symbol:reason,syntax:[why],mood:int,type:wh]).
 
 
 /*========================================================================
@@ -216,6 +223,15 @@ lexEntry(tv,[symbol:shoot,syntax:[shot],inf:fin,num:sg]).
 lexEntry(tv,[symbol:shoot,syntax:[shoots],inf:fin,num:sg]).
 lexEntry(tv,[symbol:shoot,syntax:[shoot],inf:fin,num:pl]).
 
+lexEntry(tv,[symbol:see,syntax:[see],inf:inf,num:sg]).
+lexEntry(tv,[symbol:see,syntax:[see],inf:fin,num:sg]).
+lexEntry(tv,[symbol:see,syntax:[sees],inf:fin,num:sg]).
+lexEntry(tv,[symbol:see,syntax:[sees],inf:fin,num:pl]).
+lexEntry(tv,[symbol:see,syntax:[saw],inf:inf,num:sg]).
+lexEntry(tv,[symbol:see,syntax:[saw],inf:inf,num:pl]).
+lexEntry(tv,[symbol:see,syntax:[saw],inf:fin,num:sg]).
+lexEntry(tv,[symbol:see,syntax:[saw],inf:fin,num:pl]).
+
 
 /*========================================================================
    Copula
@@ -252,6 +268,8 @@ lexEntry(adj,[symbol:red,syntax:[red]]).
 lexEntry(adj,[symbol:sad,syntax:[sad]]).
 lexEntry(adj,[symbol:small,syntax:[small]]).
 lexEntry(adj,[symbol:tall,syntax:[tall]]).
+
+lexEntry(adj,[symbol:dressing,syntax:[dressing]]).
 
 
 /*========================================================================

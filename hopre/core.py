@@ -1,25 +1,17 @@
 """User interface for HoPRe"""
 
 import os
-from swiplserver import PrologMQI, PrologThread
+from swiplserver import PrologMQI
 from hopre.utils import assert_all_json, tokenize
 
 
 BASE_DIR = os.path.dirname(__file__)
 
 
-def check_homonym_pun(sentence: list[str], pthread: PrologThread) -> bool:
-    """Checks whether the provided sentence is a homonym-based pun.
-
-    :param sentence: Tokenized sentence to be tested
-    :param pthread: Prolog thread with predicates similar/2 and dissimilar/2 declared
-    :return: True if the sentence satisfies the conditions for a homonym-based pun"""
-
-
 def hopre() -> None:
     """The main HoPRe (Homophone-based Pun Recognition) function."""
 
-    with PrologMQI() as mqi:
+    with PrologMQI(output_file_name=os.path.join(BASE_DIR, "output.log")) as mqi:
         with mqi.create_thread() as pthread:
             init_pl = os.path.join(BASE_DIR, "init.pl")
             pthread.query(f'consult("{init_pl}")')
@@ -40,16 +32,35 @@ def hopre() -> None:
             assert_all_json(dissimilar_json, "dissimilar", pthread, symmetric=True)
 
             while True:
-                phrase = tokenize(input())
-                print(phrase)
-                print(pthread.query(f"homophone({phrase}, H)"))
-                print(pthread.query(f"similar({phrase}, S)"))
-                print(pthread.query(f"dissimilar({phrase}, D)"))
-                print(pthread.query(f"lambda:t(_,{phrase},[])"))
-                print(pthread.query(f"homonymPun([{phrase}])"))
+                n = int(input("Please enter the number of sentences: "))
+                print()
+                print("Please enter the joke, one sentence at a time:")
+                sentences = [tokenize(input()) for _ in range(n)]
 
-                if input("Press enter to continue or q to exit...") == "q":
+                result = pthread.query(
+                    f"homonymPun({sentences},HomonymPhrase,Context1,Context2)"
+                )
+
+                print()
+                if result:
+                    assert isinstance(result, list)
+                    fst = result[0]
+                    context1 = " ".join(fst["Context1"])
+                    context2 = " ".join(fst["Context2"])
+                    homonym = " ".join(fst["HomonymPhrase"])
+                    print("I get it!")
+                    print(
+                        f'The two incompatible interpretations of "{context1}" and "{context2}" are resolved with the homonym "{homonym}"!'
+                    )
+                else:
+                    print("I don't think this is a joke...")
+
+                print()
+                if input("Press enter to continue or q to exit...").endswith("q"):
                     break
+
+                print()
+                print()
 
 
 if __name__ == "__main__":

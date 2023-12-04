@@ -9,7 +9,7 @@ allTexts([Sentence|Rest]):-
    lambda:t(_,Sentence,[]),
    allTexts(Rest).
 
-homonymPun(Sentences):-
+homonymPun(Sentences,HomonymPhrase,Context1,Context2):-
    allTexts(Sentences),
    append(Sentences,AllWords),
    append([_,HomonymPhrase,_],AllWords),
