@@ -77,6 +77,10 @@ lexEntry(noun,[symbol:woman,syntax:[woman]]).
 
 lexEntry(noun,[symbol:tomato,syntax:[tomato]]).
 lexEntry(noun,[symbol:salad,syntax:[salad]]).
+lexEntry(noun,[symbol:computer,syntax:[computer]]).
+lexEntry(noun,[symbol:doctor,syntax:[doctor]]).
+lexEntry(noun,[symbol:bite,syntax:[bite]]).
+lexEntry(noun,[symbol:byte,syntax:[byte]]).
 
 
 /*========================================================================
@@ -196,7 +200,12 @@ lexEntry(tv,[symbol:hate,syntax:[hate],inf:fin,num:pl]).
 
 lexEntry(tv,[symbol:have,syntax:[have],inf:inf,num:sg]).
 lexEntry(tv,[symbol:have,syntax:[has],inf:fin,num:sg]).
+lexEntry(tv,[symbol:have,syntax:[have],inf:fin,num:sg]).
 lexEntry(tv,[symbol:have,syntax:[have],inf:fin,num:pl]).
+lexEntry(tv,[symbol:have,syntax:[had],inf:inf,num:sg]).
+lexEntry(tv,[symbol:have,syntax:[had],inf:inf,num:pl]).
+lexEntry(tv,[symbol:have,syntax:[had],inf:fin,num:sg]).
+lexEntry(tv,[symbol:have,syntax:[had],inf:fin,num:pl]).
 
 lexEntry(tv,[symbol:kill,syntax:[kill],inf:inf,num:sg]).
 lexEntry(tv,[symbol:kill,syntax:[kills],inf:fin,num:sg]).
@@ -231,6 +240,15 @@ lexEntry(tv,[symbol:see,syntax:[saw],inf:inf,num:sg]).
 lexEntry(tv,[symbol:see,syntax:[saw],inf:inf,num:pl]).
 lexEntry(tv,[symbol:see,syntax:[saw],inf:fin,num:sg]).
 lexEntry(tv,[symbol:see,syntax:[saw],inf:fin,num:pl]).
+
+lexEntry(tv,[symbol:goto,syntax:[go,to],inf:inf,num:sg]).
+lexEntry(tv,[symbol:goto,syntax:[go,to],inf:fin,num:sg]).
+lexEntry(tv,[symbol:goto,syntax:[goes,to],inf:fin,num:sg]).
+lexEntry(tv,[symbol:goto,syntax:[goes,to],inf:fin,num:pl]).
+lexEntry(tv,[symbol:goto,syntax:[went,to],inf:inf,num:sg]).
+lexEntry(tv,[symbol:goto,syntax:[went,to],inf:inf,num:pl]).
+lexEntry(tv,[symbol:goto,syntax:[went,to],inf:fin,num:sg]).
+lexEntry(tv,[symbol:goto,syntax:[went,to],inf:fin,num:pl]).
 
 
 /*========================================================================

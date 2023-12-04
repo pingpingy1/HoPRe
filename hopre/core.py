@@ -53,7 +53,22 @@ def hopre() -> None:
                         f'The two incompatible interpretations of "{context1}" and "{context2}" are resolved with the homonym "{homonym}"!'
                     )
                 else:
-                    print("I don't think this is a joke...")
+                    result = pthread.query(
+                        f"homophonePun({sentences},Homophone1,Homophone2,Context1,Context2)"
+                    )
+                    if result:
+                        assert isinstance(result, list)
+                        fst = result[0]
+                        context1 = " ".join(fst["Context1"])
+                        context2 = " ".join(fst["Context2"])
+                        homophone1 = " ".join(fst["Homophone1"])
+                        homophone2 = " ".join(fst["Homophone2"])
+                        print("I get it!")
+                        print(
+                            f'The two incompatible interpretations of "{context1}" and "{context2}" are resolved with the homophones "{homophone1}" and "{homophone2}"!'
+                        )
+                    else:
+                        print("I don't think that is a joke...")
 
                 print()
                 if input("Press enter to continue or q to exit...").endswith("q"):

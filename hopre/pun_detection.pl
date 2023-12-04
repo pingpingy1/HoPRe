@@ -18,3 +18,14 @@ homonymPun(Sentences,HomonymPhrase,Context1,Context2):-
    append([_,Context2,_],AllWords),
    similar(HomonymPhrase,Context2),
    dissimilar(Context1,Context2).
+
+homophonePun(Sentences,Homophone1,Homophone2,Context1,Context2):-
+   allTexts(Sentences),
+   append(Sentences,AllWords),
+   append([_,Homophone1,_],AllWords),
+   homophone(Homophone1,Homophone2),
+   append([_,Context1,_],AllWords),
+   similar(Homophone1,Context1),
+   append([_,Context2,_],AllWords),
+   similar(Homophone2,Context2),
+   dissimilar(Context1,Context2).
