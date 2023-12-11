@@ -1,0 +1,149 @@
+[
+	{
+		"input": [
+			"Why did the tomato turn red?",
+			"Because the tomato saw the salad dressing."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why was the math book sad?",
+			"Because it had too many problems."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why did the frog call the insurance company?",
+			"The frog had a jump in the car."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why was the computer cold?",
+			"Because the computer left the Windows open."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why did the computer go to the doctor?",
+			"Because the computer had a virus."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why did the golfer bring two pairs of pants?",
+			"In case the golfer got a hole in one."
+		],
+		"joke": true
+	},
+	{
+		"input": [
+			"Why did the computer go to the doctor?",
+			"Because the computer had a byte."
+		],
+		"joke": true
+	},
+
+
+
+	{
+		"input": [
+			"A man walks."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Mia dances.",
+			"If Vincent dances then Mia dances."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Who dances?",
+			"Which robber dies?",
+			"Mia or Vincent dances."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Every customer smokes.",
+			"A customer smokes.",
+			"Mia or a man dances.",
+			"Every woman or a man dances."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Every man or woman dances.",
+			"Every man that dances smokes.",
+			"Every customer in a restaurant smokes.",
+			"Mia knows a man"
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"If Butch shoots Vincent then Vincent dies.",
+			"Who likes Mia?",
+			"Which boxer shoots Vincent?",
+			"Which boxer shoots a criminal?",
+			"Mia or Vincent eats a quarter pounder with cheese."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Every customer drinks a five dollar shake.",
+			"A customer knows Mia or a man.",
+			"Vincent knows every woman or a man.",
+			"Vincent every man or woman.",
+			"Mia dates every man that dances.",
+			"A robber likes every customer in a restaurant."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Butch growls or dies.",
+			"Every boxer growls or dies.",
+			"Butch kills a criminal or dies.",
+			"Butch kills a criminal or shoots vincent.",
+			"Butch kills a criminal or shoots a criminal.",
+			"Butch is a boxer.",
+			"Butch is not Vincent."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Butch does not die.",
+			"Butch does die.",
+			"A boxer does not die.",
+			"Every boxer does not die.",
+			"Vincent knows Mia or does not dance.",
+			"Vincent does not smoke or dance.",
+			"A man does not smoke or dance.",
+			"Every customer in a restaurant eats a big kahuna burger."
+		],
+		"joke": false
+	},
+	{
+		"input": [
+			"Every customer in a restaurant does not eat a big kahuna burger.",
+			"Every man in a restaurant knows a woman with a car.",
+			"If every man knows a woman then every woman knows a man.",
+			"Vincent eats a big kahuna burger.",
+			"Either Vincent eats a big kahuna burger or jules smokes."
+		],
+		"joke": false
+	}
+]
