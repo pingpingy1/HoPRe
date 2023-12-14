@@ -119,7 +119,7 @@ def check_pun(sentences: list[list[str]], pthread: PrologThread) -> tuple[str, b
             + context1
             + " and "
             + context2
-            + " are resolved with the homonym "
+            + " are resolved with the homophones "
             + homophone1
             + " and "
             + homophone2
@@ -171,6 +171,11 @@ def test(filename: str | None = None, encoding: str = "UTF-8") -> None:
 
     assert isinstance(testcases, list)
 
+    positive: int = 0
+    positive_success: int = 0
+    negative: int = 0
+    negative_success: int = 0
+
     with PrologMQI(output_file_name=os.path.join(BASE_DIR, "output.log")) as mqi:
         with mqi.create_thread() as pthread:
             init_kb(pthread)
@@ -179,8 +184,19 @@ def test(filename: str | None = None, encoding: str = "UTF-8") -> None:
                 assert "input" in tc.keys()
                 assert "joke" in tc.keys()
 
+                if tc["joke"]:
+                    positive += 1
+                else:
+                    negative += 1
+
                 sentences = [tokenize(s) for s in tc["input"]]
                 result, hopre_ans = check_pun(sentences, pthread)
+
+                if hopre_ans == tc["joke"]:
+                    if tc["joke"]:
+                        positive_success += 1
+                    else:
+                        negative_success += 1
 
                 print(f'Provided input:\n{tc["input"]}')
                 print(f'Answer: {"Pun" if tc["joke"] else "Not a pun"}')
@@ -189,6 +205,9 @@ def test(filename: str | None = None, encoding: str = "UTF-8") -> None:
                     print(f"Analysis: {result}")
                 print(f'Status: {"SUCCESS" if hopre_ans == tc["joke"] else "FAIL"}')
                 print()
+
+            print(f"Positive test: {positive_success} / {positive}")
+            print(f"Negative test: {negative_success} / {negative}")
 
 
 if __name__ == "__main__":
