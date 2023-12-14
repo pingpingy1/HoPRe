@@ -81,6 +81,15 @@ lexEntry(noun,[symbol:computer,syntax:[computer]]).
 lexEntry(noun,[symbol:doctor,syntax:[doctor]]).
 lexEntry(noun,[symbol:bite,syntax:[bite]]).
 lexEntry(noun,[symbol:byte,syntax:[byte]]).
+lexEntry(noun,[symbol:frog,syntax:[frog]]).
+lexEntry(noun,[symbol:insurancecompany,syntax:[insurance,company]]).
+lexEntry(noun,[symbol:jump,syntax:[jump]]).
+lexEntry(noun,[symbol:car,syntax:[car]]).
+lexEntry(noun,[symbol:virus,syntax:[virus]]).
+lexEntry(noun,[symbol:golfer,syntax:[golfer]]).
+lexEntry(noun,[symbol:hole,syntax:[hole]]).
+lexEntry(noun,[symbol:book,syntax:[book]]).
+lexEntry(noun,[symbol:windows,syntax:[windows]]).
 
 
 /*========================================================================
@@ -104,6 +113,10 @@ lexEntry(pn,[symbol:thewolf,syntax:[the,wolf]]).
 lexEntry(pn,[symbol:vincent,syntax:[vincent]]).
 lexEntry(pn,[symbol:vincent,syntax:[vincent,vega]]).
 lexEntry(pn,[symbol:yolanda,syntax:[yolanda]]).
+
+lexEntry(pn,[symbol:twopairsofpants,syntax:[two,pairs,of,pants]]).
+lexEntry(pn,[symbol:one,syntax:[one]]).
+lexEntry(pn,[symbol:toomanyprobs,syntax:[too,many,problems]]).
 
 
 /*========================================================================
@@ -251,6 +264,46 @@ lexEntry(tv,[symbol:goto,syntax:[went,to],inf:fin,num:sg]).
 lexEntry(tv,[symbol:goto,syntax:[went,to],inf:fin,num:pl]).
 
 
+lexEntry(tv,[symbol:call,syntax:[call],inf:inf,num:sg]).
+lexEntry(tv,[symbol:call,syntax:[call],inf:fin,num:sg]).
+lexEntry(tv,[symbol:call,syntax:[calls],inf:fin,num:sg]).
+lexEntry(tv,[symbol:call,syntax:[calls],inf:fin,num:pl]).
+lexEntry(tv,[symbol:call,syntax:[called],inf:inf,num:sg]).
+lexEntry(tv,[symbol:call,syntax:[called],inf:inf,num:pl]).
+lexEntry(tv,[symbol:call,syntax:[called],inf:fin,num:sg]).
+lexEntry(tv,[symbol:call,syntax:[called],inf:fin,num:pl]).
+
+
+lexEntry(tv,[symbol:bring,syntax:[bring],inf:inf,num:sg]).
+lexEntry(tv,[symbol:bring,syntax:[bring],inf:fin,num:sg]).
+lexEntry(tv,[symbol:bring,syntax:[brings],inf:fin,num:sg]).
+lexEntry(tv,[symbol:bring,syntax:[brings],inf:fin,num:pl]).
+lexEntry(tv,[symbol:bring,syntax:[brought],inf:inf,num:sg]).
+lexEntry(tv,[symbol:bring,syntax:[brought],inf:inf,num:pl]).
+lexEntry(tv,[symbol:bring,syntax:[brought],inf:fin,num:sg]).
+lexEntry(tv,[symbol:bring,syntax:[brought],inf:fin,num:pl]).
+
+
+lexEntry(tv,[symbol:get,syntax:[get],inf:inf,num:sg]).
+lexEntry(tv,[symbol:get,syntax:[get],inf:fin,num:sg]).
+lexEntry(tv,[symbol:get,syntax:[gets],inf:fin,num:sg]).
+lexEntry(tv,[symbol:get,syntax:[gets],inf:fin,num:pl]).
+lexEntry(tv,[symbol:get,syntax:[got],inf:inf,num:sg]).
+lexEntry(tv,[symbol:get,syntax:[got],inf:inf,num:pl]).
+lexEntry(tv,[symbol:get,syntax:[got],inf:fin,num:sg]).
+lexEntry(tv,[symbol:get,syntax:[got],inf:fin,num:pl]).
+
+
+lexEntry(tv,[symbol:open,syntax:[open],inf:inf,num:sg]).
+lexEntry(tv,[symbol:open,syntax:[open],inf:fin,num:sg]).
+lexEntry(tv,[symbol:open,syntax:[opens],inf:fin,num:sg]).
+lexEntry(tv,[symbol:open,syntax:[opens],inf:fin,num:pl]).
+lexEntry(tv,[symbol:open,syntax:[opened],inf:inf,num:sg]).
+lexEntry(tv,[symbol:open,syntax:[opened],inf:inf,num:pl]).
+lexEntry(tv,[symbol:open,syntax:[opened],inf:fin,num:sg]).
+lexEntry(tv,[symbol:open,syntax:[opened],inf:fin,num:pl]).
+
+
 /*========================================================================
    Copula
 ========================================================================*/
@@ -288,6 +341,8 @@ lexEntry(adj,[symbol:small,syntax:[small]]).
 lexEntry(adj,[symbol:tall,syntax:[tall]]).
 
 lexEntry(adj,[symbol:dressing,syntax:[dressing]]).
+lexEntry(adj,[symbol:cold,syntax:[cold]]).
+lexEntry(adj,[symbol:math,syntax:[math]]).
 
 
 /*========================================================================

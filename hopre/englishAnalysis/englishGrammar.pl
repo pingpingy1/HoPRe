@@ -42,6 +42,11 @@ t([sem:T])-->
    s([coord:no,sem:S]),
    {combine(t:T,[s:S])}.
 
+t([sem:T])-->
+   [in,case],
+   s([coord:no,sem:S]),
+   {combine(t:T,[s:S])}.
+
 
 /*========================================================================
    Sentences
