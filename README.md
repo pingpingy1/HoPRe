@@ -27,5 +27,6 @@ Please adapt and improvise along the way.
 	```
 4. Run HoPRe.
 	```bash
-	python -m hopre.core
+	python -m hopre.core           # Take user input
+	python -m hopre.core -t        # Run test suites
 	```
